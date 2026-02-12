@@ -1,6 +1,7 @@
 package com.jorgealvarez.cruds.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "categoria")
@@ -10,6 +11,34 @@ public class Categoria {
     @Column(name = "id_categoria")
     private Integer idCategoria;
 
-    @Column
+    @NotNull
+    @Column(name = "nombre_categoria")
+    private String nombreCategoria;
 
+    @Column(name = "descripcion_categoria")
+    private String descripcionCategoria;
+
+    public Integer getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public String getNombreCategoria() {
+        return nombreCategoria;
+    }
+
+    public void setNombreCategoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
+    }
+
+    public String getDescripcionCategoria() {
+        return descripcionCategoria;
+    }
+
+    public void setDescripcionCategoria(String descripcionCategoria) {
+        this.descripcionCategoria = descripcionCategoria;
+    }
 }
