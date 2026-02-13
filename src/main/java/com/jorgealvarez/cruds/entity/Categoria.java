@@ -8,11 +8,11 @@ import jakarta.validation.constraints.NotNull;
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_categoria")
+    @Column(name = "id_categoria", nullable = false)
     private Integer idCategoria;
 
     @NotNull
-    @Column(name = "nombre_categoria")
+    @Column(name = "nombre_categoria", nullable = false)
     private String nombreCategoria;
 
     @Column(name = "descripcion_categoria")
