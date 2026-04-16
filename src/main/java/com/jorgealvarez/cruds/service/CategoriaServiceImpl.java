@@ -32,7 +32,10 @@ public class CategoriaServiceImpl implements CategoriaService{
 
     @Override
     public Categoria actualizar(Integer id, Categoria categoria) {
-        categoria.setIdCategoria(id);
+        Categoria existente = obtenerPorId(id);
+
+        existente.setDescripcionCategoria(categoria.getDescripcionCategoria());
+        existente.setNombreCategoria(categoria.getNombreCategoria());
         return categoriaRepository.save(categoria);
     }
 

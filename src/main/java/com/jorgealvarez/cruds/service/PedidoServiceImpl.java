@@ -32,8 +32,13 @@ public class PedidoServiceImpl implements  PedidoService{
 
     @Override
     public Pedido actualizar(Integer id, Pedido pedido) {
-        pedido.setIdPedido(id);
-        return pedidoRepository.save(pedido);
+        Pedido existente = obtenerPorId(id);
+
+        existente.setFechaPedido(pedido.getFechaPedido());
+        existente.setTotalPedido(pedido.getTotalPedido());
+        existente.setUsuario(pedido.getUsuario());
+
+        return pedidoRepository.save(existente);
     }
 
     @Override

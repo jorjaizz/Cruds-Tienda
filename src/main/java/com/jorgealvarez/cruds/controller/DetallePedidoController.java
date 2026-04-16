@@ -16,28 +16,28 @@ public class DetallePedidoController {
         this.detallePedidoService = detallePedidoService;
     }
 
-    @GetMapping("/get")
+    @GetMapping
     public List<DetallePedido> listar(){
         return detallePedidoService.listar();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     public DetallePedido obtenerPorId(@PathVariable Integer id){
         return detallePedidoService.obtenerPorId(id);
     }
 
-    @PostMapping("/post")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public DetallePedido crear(@RequestBody DetallePedido detallePedido){
         return detallePedidoService.crear(detallePedido);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Integer id){
         detallePedidoService.eliminar(id);
     }
 
-    @PutMapping("/put/{id}")
+    @PutMapping("/{id}")
     public DetallePedido actualizar(@PathVariable Integer id, @RequestBody DetallePedido detallePedido){
         return detallePedidoService.actualizar(id, detallePedido);
     }

@@ -32,8 +32,13 @@ public class UsuarioServiceImpl implements UsuarioService{
 
     @Override
     public Usuario actualizar(Integer id, Usuario usuario) {
-        usuario.setIdUsuario(id);
-        return usuarioRepository.save(usuario);
+        Usuario existente = obtenerPorId(id);
+
+        existente.setNombreUsuario(usuario.getNombreUsuario());
+        existente.setApellidoUsuario(usuario.getApellidoUsuario());
+        existente.setEdadUsuario(usuario.getEdadUsuario());
+
+        return usuarioRepository.save(existente);
     }
 
     @Override

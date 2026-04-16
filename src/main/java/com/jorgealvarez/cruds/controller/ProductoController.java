@@ -17,28 +17,28 @@ public class ProductoController {
         this.productoService = productoService;
     }
 
-    @GetMapping("/get")
+    @GetMapping
     public List<Producto> listar(){
         return productoService.listar();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     public Producto obtenerPorId(@PathVariable Integer id){
         return productoService.obtenerPorId(id);
     }
 
-    @PostMapping("/post")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Producto crear(@RequestBody Producto producto){
         return productoService.crear(producto);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Integer id){
         productoService.eliminar(id);
     }
 
-    @PutMapping("/put/{id}")
+    @PutMapping("/{id}")
     public Producto actualizar(@PathVariable Integer id, @RequestBody Producto producto){
         return productoService.actualizar(id, producto);
     }
