@@ -16,28 +16,28 @@ public class CategoriaController {
         this.categoriaService = categoriaService;
     }
 
-    @GetMapping("/get")
+    @GetMapping
     public List<Categoria> listar(){
         return categoriaService.listar();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     public Categoria obtenerPorId(@PathVariable Integer id){
         return categoriaService.obtenerPorId(id);
     }
 
-    @PostMapping("/post")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Categoria crear(@RequestBody Categoria categoria){
         return categoriaService.crear(categoria);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Integer id){
         categoriaService.eliminar(id);
     }
 
-    @PutMapping("/put/{id}")
+    @PutMapping("{id}")
     public Categoria actualizar(@PathVariable Integer id, @RequestBody Categoria categoria){
         return categoriaService.actualizar(id, categoria);
     }

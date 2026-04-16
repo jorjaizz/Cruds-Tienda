@@ -32,8 +32,14 @@ public class ProductoServiceImpl implements ProductoService {
 
     @Override
     public Producto actualizar(Integer id, Producto producto) {
-        producto.setIdProducto(id);
-        return productoRepository.save(producto);
+        Producto existente = obtenerPorId(id);
+
+        existente.setNombreProducto(producto.getNombreProducto());
+        existente.setPrecioProducto(producto.getPrecioProducto());
+        existente.setStock(producto.getStock());
+        existente.setCategoria(producto.getCategoria());
+
+        return productoRepository.save(existente);
     }
 
     @Override

@@ -17,28 +17,28 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
-    @GetMapping("/get")
+    @GetMapping
     public List<Usuario> listar(){
         return usuarioService.listar();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     public Usuario obtenerPorId(@PathVariable Integer id){
         return usuarioService.obtenerPorId(id);
     }
 
-    @PostMapping("/post")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Usuario crear(@RequestBody Usuario usuario){
         return usuarioService.crear(usuario);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Integer id){
         usuarioService.eliminar(id);
     }
 
-    @PutMapping("/put/{id}")
+    @PutMapping("/{id}")
     public Usuario actualizar(@PathVariable Integer id, @RequestBody Usuario usuario){
         return usuarioService.actualizar(id, usuario);
     }

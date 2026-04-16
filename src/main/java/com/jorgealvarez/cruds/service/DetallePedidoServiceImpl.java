@@ -32,8 +32,14 @@ public class DetallePedidoServiceImpl implements DetallePedidoService{
 
     @Override
     public DetallePedido actualizar(Integer id, DetallePedido detallePedido) {
-        detallePedido.setIdDetalle(id);
-        return detallePedidoRepository.save(detallePedido);
+        DetallePedido existente = obtenerPorId(id);
+
+        existente.setCantidad(detallePedido.getCantidad());
+        existente.setPrecioUnitario(detallePedido.getPrecioUnitario());
+        existente.setPedido(detallePedido.getPedido());
+        existente.setProducto(detallePedido.getProducto());
+
+        return detallePedidoRepository.save(existente);
     }
 
     @Override

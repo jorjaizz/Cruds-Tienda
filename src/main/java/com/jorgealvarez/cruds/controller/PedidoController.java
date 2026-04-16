@@ -16,28 +16,28 @@ public class PedidoController {
         this.pedidoService = pedidoService;
     }
 
-    @GetMapping("/get")
+    @GetMapping
     public List<Pedido> listar(){
         return pedidoService.listar();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/{id}")
     public Pedido obtenerPorId(@PathVariable Integer id){
         return pedidoService.obtenerPorId(id);
     }
 
-    @PostMapping("/post")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Pedido crear(@RequestBody Pedido pedido){
         return pedidoService.crear(pedido);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Integer id){
         pedidoService.eliminar(id);
     }
 
-    @PutMapping("/put/{id}")
+    @PutMapping("/{id}")
     public Pedido actualizar(@PathVariable Integer id, @RequestBody Pedido pedido){
         return pedidoService.actualizar(id, pedido);
     }
