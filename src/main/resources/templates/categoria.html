@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Categoría</title>
+  <link rel="stylesheet" href="./static/styles/home.css" />
+  <link rel="stylesheet" href="./static/styles/forms.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="crud-page">
+
+  <div class="crud-header">
+    <p class="crud-eyebrow">Gestión</p>
+    <h1 class="crud-title">Categorías</h1>
+  </div>
+
+  <div class="crud-table-wrap">
+    <table class="crud-table">
+      <thead>
+        <tr><th>ID</th><th>Nombre</th><th>Descripción</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <tr>
+  <td>2</td><td>Teclados</td><td>Periféricos de entrada para computadoras</td>
+</tr>
+<tr>
+  <td>3</td><td>Mouse</td><td>Dispositivos apuntadores para PC</td>
+</tr>
+<tr>
+  <td>4</td><td>Monitores</td><td>Pantallas para visualización</td>
+</tr>
+<tr>
+  <td>5</td><td>Impresoras</td><td>Equipos para impresión de documentos</td>
+</tr>
+<tr>
+  <td>6</td><td>Tablets</td><td>Dispositivos electrónicos portátiles táctiles</td>
+</tr>
+<tr>
+  <td>7</td><td>Smartphones</td><td>Teléfonos inteligentes</td>
+</tr>
+<tr>
+  <td>8</td><td>Accesorios</td><td>Complementos para dispositivos electrónicos</td>
+</tr>
+<tr>
+  <td>9</td><td>Almacenamiento</td><td>Discos duros y memorias</td>
+</tr>
+<tr>
+  <td>10</td><td>Redes</td><td>Equipos y dispositivos de red</td>
+</tr>
+<tr>
+  <td>11</td><td>Software</td><td>Programas y aplicaciones informáticas</td>
+</tr>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="crud-actions">
+    <button class="crud-btn" type="button" onclick="mostrarFormularioCrear()">
+      <span class="crud-btn-dot"></span>Nuevo
+    </button>
+    <button class="crud-btn" type="button" onclick="mostrarFormularioEditar()">
+      <span class="crud-btn-dot"></span>Editar
+    </button>
+    <button class="crud-btn danger" type="button">Eliminar</button>
+    <a class="crud-btn neutral" href="./home.html">Volver</a>
+  </div>
+
+  <div class="crud-form-panel" id="crear-formulario">
+    <h3 class="crud-form-title">Crear categoría</h3>
+    <form class="crud-form" action="" method="post">
+      <div class="crud-field">
+        <label class="crud-label" for="crear-nombre-categoria">Nombre</label>
+        <input class="crud-input" type="text" name="nombreCategoria" id="crear-nombre-categoria" placeholder="Ingresa el nombre…" required />
+      </div>
+      <div class="crud-field">
+        <label class="crud-label" for="crear-descripcion-categoria">Descripción</label>
+        <input class="crud-input" type="text" name="descripcionCategoria" id="crear-descripcion-categoria" placeholder="Ingresa la descripción…" required />
+      </div>
+      <div class="crud-form-actions">
+        <button class="crud-btn crud-btn-primary" type="submit">Crear</button>
+        <button class="crud-btn" type="reset">Limpiar</button>
+        <button class="crud-btn neutral" type="button" onclick="ocultarFormularioCrear()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="crud-form-panel" id="editar-formulario">
+    <h3 class="crud-form-title">Editar categoría</h3>
+    <form class="crud-form" action="" method="post">
+      <div class="crud-field">
+        <label class="crud-label" for="actualizar-id-categoria">ID</label>
+        <input class="crud-input" type="number" name="idCategoria" id="actualizar-id-categoria" placeholder="ID a editar…" required />
+      </div>
+      <div class="crud-field">
+        <label class="crud-label" for="actualizar-nombre-categoria">Nombre</label>
+        <input class="crud-input" type="text" name="nombreCategoria" id="actualizar-nombre-categoria" placeholder="Nuevo nombre…" required />
+      </div>
+      <div class="crud-field full">
+        <label class="crud-label" for="actualizar-descripcion-categoria">Descripción</label>
+        <input class="crud-input" type="text" name="descripcionCategoria" id="actualizar-descripcion-categoria" placeholder="Nueva descripción…" required />
+      </div>
+      <div class="crud-form-actions">
+        <button class="crud-btn crud-btn-primary" type="submit">Guardar</button>
+        <button class="crud-btn" type="reset">Limpiar</button>
+        <button class="crud-btn neutral" type="button" onclick="ocultarFormularioEditar()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+<footer class="ht-footer">
+    <small class="ht-copy">© Jorge Ernesto Alvarez Pérez</small>
+    <div class="ht-social">
+      <a class="ht-social-link" href="mailto:jalvarez-2025306@kinal.edu.gt">
+        <i class="fa-solid fa-envelope"></i> Outlook
+      </a>
+      <a class="ht-social-link" href="https://wa.me/50242834330" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+      <a class="ht-social-link" href="https://github.com/jorjaizz">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+    </div>
+  </footer>
+<script src="./static/js/script.js"></script>
+</body>
+</html>

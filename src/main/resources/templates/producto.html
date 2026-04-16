@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Producto</title>
+  <link rel="stylesheet" href="./static/styles/home.css" />
+  <link rel="stylesheet" href="./static/styles/forms.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="crud-page">
+
+  <div class="crud-header">
+    <p class="crud-eyebrow">Gestión</p>
+    <h1 class="crud-title">Productos</h1>
+  </div>
+
+  <div class="crud-table-wrap">
+    <table class="crud-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>ID Categoría</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td><td>Laptop</td><td>4500.00</td><td>10</td><td>1</td>
+        </tr>
+        <tr>
+          <td>2</td><td>Mouse</td><td>150.00</td><td>50</td><td>2</td>
+        </tr>
+        <tr>
+          <td>3</td><td>Teclado</td><td>300.00</td><td>30</td><td>2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="crud-actions">
+    <button class="crud-btn" type="button" onclick="mostrarFormularioCrear()">
+      <span class="crud-btn-dot"></span>Nuevo
+    </button>
+    <button class="crud-btn" type="button" onclick="mostrarFormularioEditar()">
+      <span class="crud-btn-dot"></span>Editar
+    </button>
+    <button class="crud-btn danger" type="button">Eliminar</button>
+    <a class="crud-btn neutral" href="./home.html">Volver</a>
+  </div>
+
+  <div class="crud-form-panel" id="crear-formulario">
+    <h3 class="crud-form-title">Crear producto</h3>
+    <form class="crud-form" action="" method="post">
+      
+      <div class="crud-field">
+        <label class="crud-label" for="crear-nombre">Nombre</label>
+        <input class="crud-input" type="text" name="nombreProducto" id="crear-nombre" placeholder="Ingresa el nombre…" required />
+      </div>
+
+      <div class="crud-field">
+        <label class="crud-label" for="crear-precio">Precio</label>
+        <input class="crud-input" type="number" step="0.01" name="precioProducto" id="crear-precio" placeholder="Ingresa el precio…" required />
+      </div>
+
+      <div class="crud-field">
+        <label class="crud-label" for="crear-stock">Stock</label>
+        <input class="crud-input" type="number" name="stock" id="crear-stock" placeholder="Ingresa el stock…" required />
+      </div>
+
+      <div class="crud-field">
+        <label class="crud-label" for="crear-categoria">ID Categoría</label>
+        <input class="crud-input" type="number" name="categoria" id="crear-categoria" placeholder="ID de la categoría…" required />
+      </div>
+
+      <div class="crud-form-actions">
+        <button class="crud-btn crud-btn-primary" type="submit">Crear</button>
+        <button class="crud-btn" type="reset">Limpiar</button>
+        <button class="crud-btn neutral" type="button" onclick="ocultarFormularioCrear()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="crud-form-panel" id="editar-formulario">
+    <h3 class="crud-form-title">Editar producto</h3>
+    <form class="crud-form" action="" method="post">
+      
+      <div class="crud-field">
+        <label class="crud-label" for="actualizar-id">ID</label>
+        <input class="crud-input" type="number" name="idProducto" id="actualizar-id" placeholder="ID a editar…" required />
+      </div>
+
+      <div class="crud-field">
+        <label class="crud-label" for="actualizar-nombre">Nombre</label>
+        <input class="crud-input" type="text" name="nombreProducto" id="actualizar-nombre" placeholder="Nuevo nombre…" required />
+      </div>
+
+      <div class="crud-field">
+        <label class="crud-label" for="actualizar-precio">Precio</label>
+        <input class="crud-input" type="number" step="0.01" name="precioProducto" id="actualizar-precio" placeholder="Nuevo precio…" required />
+      </div>
+
+      <div class="crud-field">
+        <label class="crud-label" for="actualizar-stock">Stock</label>
+        <input class="crud-input" type="number" name="stock" id="actualizar-stock" placeholder="Nuevo stock…" required />
+      </div>
+
+      <div class="crud-field">
+        <label class="crud-label" for="actualizar-categoria">ID Categoría</label>
+        <input class="crud-input" type="number" name="categoria" id="actualizar-categoria" placeholder="Nueva categoría…" required />
+      </div>
+
+      <div class="crud-form-actions">
+        <button class="crud-btn crud-btn-primary" type="submit">Guardar</button>
+        <button class="crud-btn" type="reset">Limpiar</button>
+        <button class="crud-btn neutral" type="button" onclick="ocultarFormularioEditar()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<footer class="ht-footer">
+  <small class="ht-copy">© Jorge Ernesto Alvarez Pérez</small>
+  <div class="ht-social">
+    <a class="ht-social-link" href="mailto:jalvarez-2025306@kinal.edu.gt">
+      <i class="fa-solid fa-envelope"></i> Outlook
+    </a>
+    <a class="ht-social-link" href="https://wa.me/50242834330" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+    <a class="ht-social-link" href="https://github.com/jorjaizz">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+  </div>
+</footer>
+
+<script src="./static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* ── crud.css  —  reutilizable para cualquier entidad ── */
+
+.crud-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+   flex: 1;
+}
+
+/* Encabezado */
+.crud-header       { margin-bottom: 1.8rem; }
+.crud-eyebrow      { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ht-muted); margin-bottom: 0.4rem; }
+.crud-title        { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--ht-accent-dark); line-height: 1.1; }
+
+/* Tabla */
+.crud-table-wrap   { overflow-x: auto; border: 1px solid var(--ht-border); border-radius: var(--radius-md); background: var(--ht-surface); margin-bottom: 1.2rem; box-shadow: 0 1px 4px rgba(46,28,14,.05); }
+.crud-table        { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.crud-table thead tr { border-bottom: 1px solid var(--ht-border); }
+.crud-table th     { padding: 0.75rem 1.1rem; text-align: left; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ht-muted); }
+.crud-table td     { padding: 0.75rem 1.1rem; color: var(--ht-text); border-bottom: 1px solid var(--ht-border); }
+.crud-table tbody tr:last-child td { border-bottom: none; }
+.crud-table tbody tr { transition: background var(--transition); cursor: pointer; }
+.crud-table tbody tr:hover,
+.crud-table tbody tr.selected      { background: var(--ht-hover-bg); }
+.crud-table tbody tr.selected td:first-child { border-left: 3px solid var(--ht-accent); }
+
+/* Botones de acción */
+.crud-actions      { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 1.8rem; }
+
+.crud-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0.6rem 1.35rem;
+  font-family: var(--font-body); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.05em;
+  border-radius: var(--radius-pill); border: 1px solid var(--ht-border);
+  background: var(--ht-surface); color: var(--ht-accent-dark);
+  cursor: pointer; transition: all var(--transition);
+  box-shadow: 0 1px 2px rgba(46,28,14,.05);
+  text-decoration: none;   
+}
+.crud-btn:hover    { background: var(--ht-hover-bg); border-color: var(--ht-accent); box-shadow: 0 4px 12px rgba(46,28,14,.10); transform: translateY(-1px); }
+.crud-btn:active   { transform: translateY(0); box-shadow: none; }
+
+.crud-btn-dot      { width: 5px; height: 5px; border-radius: 50%; background: var(--ht-accent); opacity: .4; transition: opacity var(--transition), transform var(--transition); }
+.crud-btn:hover .crud-btn-dot { opacity: 1; transform: scale(1.4); }
+
+.crud-btn.danger   { color: #8c1a1a; border-color: #e8c8c8; }
+.crud-btn.danger:hover { background: #fff0f0; border-color: #c0392b; }
+.crud-btn.neutral  { color: var(--ht-muted); }
+
+.crud-btn-primary  { background: var(--ht-accent-dark); color: #F5F2ED; border-color: var(--ht-accent-dark); }
+.crud-btn-primary:hover { background: var(--ht-accent); border-color: var(--ht-accent); color: #fff; }
+
+/* Paneles de formulario */
+.crud-form-panel   { background: var(--ht-surface); border: 1px solid var(--ht-border); border-radius: var(--radius-md); padding: 1.6rem 1.8rem; margin-bottom: 1.4rem; box-shadow: 0 1px 4px rgba(46,28,14,.05); display: none; }
+.crud-form-panel.visible { display: block; }
+
+.crud-form-title   { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--ht-accent-dark); margin-bottom: 1.3rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--ht-border); }
+
+/* Layout interno del form — grid de 2 columnas */
+.crud-form         { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.4rem; }
+.crud-field        { display: flex; flex-direction: column; gap: 5px; }
+.crud-field.full   { grid-column: 1 / -1; }
+
+.crud-label        { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ht-muted); }
+
+.crud-input {
+  padding: 0.55rem 0.85rem;
+  font-family: var(--font-body); font-size: 0.875rem; color: var(--ht-text);
+  background: var(--ht-bg); border: 1px solid var(--ht-border); border-radius: 8px;
+  outline: none; transition: border-color var(--transition), box-shadow var(--transition);
+}
+.crud-input:focus  { border-color: var(--ht-accent); box-shadow: 0 0 0 3px rgba(138,104,72,.12); }
+.crud-input::placeholder { color: var(--ht-muted); opacity: .7; }
+
+.crud-form-actions { grid-column: 1 / -1; display: flex; gap: 10px; padding-top: 0.4rem; flex-wrap: wrap; }
+
+/* Responsive */
+@media (max-width: 560px) {
+  .crud-form        { grid-template-columns: 1fr; }
+  .crud-field.full  { grid-column: 1; }
+  .crud-actions     { flex-direction: column; }
+  .crud-btn         { width: 100%; justify-content: center; }
+}
