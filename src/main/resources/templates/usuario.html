@@ -1,45 +1,41 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Usuario</title>
-  <link rel="stylesheet" href="./static/styles/home.css" />
-  <link rel="stylesheet" href="./static/styles/forms.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
 <div class="crud-page">
-
   <div class="crud-header">
     <p class="crud-eyebrow">Gestión</p>
     <h1 class="crud-title">Usuarios</h1>
   </div>
 
+  <!-- TABLA -->
   <div class="crud-table-wrap">
     <table class="crud-table">
       <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Edad</th>
-        </tr>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+        <th>Username</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td><td>Juan</td><td>Pérez</td><td>25</td>
-        </tr>
-        <tr>
-          <td>2</td><td>Ana</td><td>López</td><td>30</td>
-        </tr>
-        <tr>
-          <td>3</td><td>Carlos</td><td>Ramírez</td><td>22</td>
-        </tr>
+      <tr>
+        <td>1</td>
+        <td>Jorge</td>
+        <td>Alvarez</td>
+        <td>18</td>
+        <td>jorge123</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Maria</td>
+        <td>Lopez</td>
+        <td>22</td>
+        <td>mlopez</td>
+      </tr>
       </tbody>
     </table>
   </div>
 
+  <!-- BOTONES -->
   <div class="crud-actions">
     <button class="crud-btn" type="button" onclick="mostrarFormularioCrear()">
       <span class="crud-btn-dot"></span>Nuevo
@@ -51,23 +47,34 @@
     <a class="crud-btn neutral" href="./home.html">Volver</a>
   </div>
 
+  <!-- FORM CREAR -->
   <div class="crud-form-panel" id="crear-formulario">
-    <h3 class="crud-form-title">Crear usuario</h3>
+    <h3 class="crud-form-title">Crear Usuario</h3>
     <form class="crud-form" action="" method="post">
-      
+
       <div class="crud-field">
-        <label class="crud-label" for="crear-nombre">Nombre</label>
-        <input class="crud-input" type="text" name="nombreUsuario" id="crear-nombre" placeholder="Ingresa el nombre…" required />
+        <label class="crud-label">Nombre</label>
+        <input class="crud-input" type="text" name="nombreUsuario" required />
       </div>
 
       <div class="crud-field">
-        <label class="crud-label" for="crear-apellido">Apellido</label>
-        <input class="crud-input" type="text" name="apellidoUsuario" id="crear-apellido" placeholder="Ingresa el apellido…" required />
+        <label class="crud-label">Apellido</label>
+        <input class="crud-input" type="text" name="apellidoUsuario" required />
       </div>
 
       <div class="crud-field">
-        <label class="crud-label" for="crear-edad">Edad</label>
-        <input class="crud-input" type="number" name="edadUsuario" id="crear-edad" placeholder="Ingresa la edad…" required />
+        <label class="crud-label">Edad</label>
+        <input class="crud-input" type="number" name="edadUsuario" required />
+      </div>
+
+      <div class="crud-field">
+        <label class="crud-label">Username</label>
+        <input class="crud-input" type="text" name="username" required />
+      </div>
+
+      <div class="crud-field">
+        <label class="crud-label">Password</label>
+        <input class="crud-input" type="password" name="password" required />
       </div>
 
       <div class="crud-form-actions">
@@ -78,28 +85,39 @@
     </form>
   </div>
 
+  <!-- FORM EDITAR -->
   <div class="crud-form-panel" id="editar-formulario">
-    <h3 class="crud-form-title">Editar usuario</h3>
+    <h3 class="crud-form-title">Editar Usuario</h3>
     <form class="crud-form" action="" method="post">
-      
+
       <div class="crud-field">
-        <label class="crud-label" for="actualizar-id">ID</label>
-        <input class="crud-input" type="number" name="idUsuario" id="actualizar-id" placeholder="ID a editar…" required />
+        <label class="crud-label">ID</label>
+        <input class="crud-input" type="number" name="idUsuario" required />
       </div>
 
       <div class="crud-field">
-        <label class="crud-label" for="actualizar-nombre">Nombre</label>
-        <input class="crud-input" type="text" name="nombreUsuario" id="actualizar-nombre" placeholder="Nuevo nombre…" required />
+        <label class="crud-label">Nombre</label>
+        <input class="crud-input" type="text" name="nombreUsuario" required />
       </div>
 
       <div class="crud-field">
-        <label class="crud-label" for="actualizar-apellido">Apellido</label>
-        <input class="crud-input" type="text" name="apellidoUsuario" id="actualizar-apellido" placeholder="Nuevo apellido…" required />
+        <label class="crud-label">Apellido</label>
+        <input class="crud-input" type="text" name="apellidoUsuario" required />
       </div>
 
       <div class="crud-field">
-        <label class="crud-label" for="actualizar-edad">Edad</label>
-        <input class="crud-input" type="number" name="edadUsuario" id="actualizar-edad" placeholder="Nueva edad…" required />
+        <label class="crud-label">Edad</label>
+        <input class="crud-input" type="number" name="edadUsuario" required />
+      </div>
+
+      <div class="crud-field">
+        <label class="crud-label">Username</label>
+        <input class="crud-input" type="text" name="username" required />
+      </div>
+
+      <div class="crud-field">
+        <label class="crud-label">Password</label>
+        <input class="crud-input" type="password" name="password" required />
       </div>
 
       <div class="crud-form-actions">
@@ -109,24 +127,4 @@
       </div>
     </form>
   </div>
-
 </div>
-
-<footer class="ht-footer">
-  <small class="ht-copy">© Jorge Ernesto Alvarez Pérez</small>
-  <div class="ht-social">
-    <a class="ht-social-link" href="mailto:jalvarez-2025306@kinal.edu.gt">
-      <i class="fa-solid fa-envelope"></i> Outlook
-    </a>
-    <a class="ht-social-link" href="https://wa.me/50242834330" target="_blank">
-      <i class="fa-brands fa-whatsapp"></i> WhatsApp
-    </a>
-    <a class="ht-social-link" href="https://github.com/jorjaizz">
-      <i class="fa-brands fa-github"></i> GitHub
-    </a>
-  </div>
-</footer>
-
-<script src="./static/js/script.js"></script>
-</body>
-</html>

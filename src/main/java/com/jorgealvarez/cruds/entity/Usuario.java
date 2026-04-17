@@ -2,9 +2,13 @@ package com.jorgealvarez.cruds.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "usuario")
+@Getter
+@Setter
 public class Usuario {
 
     @Id
@@ -24,35 +28,12 @@ public class Usuario {
     @Column(name = "edad_usuario", nullable = false)
     private Integer edadUsuario;
 
-    public Integer getIdUsuario() {
-        return idUsuario;
-    }
+    @NotNull
+    @Column(name = "username", nullable = false)
+    private String username;
 
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
-    }
+    @NotNull
+    @Column(name = "password", nullable = false)
+    private String password;
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
-
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
-
-    public String getApellidoUsuario() {
-        return apellidoUsuario;
-    }
-
-    public void setApellidoUsuario(String apellidoUsuario) {
-        this.apellidoUsuario = apellidoUsuario;
-    }
-
-    public Integer getEdadUsuario() {
-        return edadUsuario;
-    }
-
-    public void setEdadUsuario(Integer edadUsuario) {
-        this.edadUsuario = edadUsuario;
-    }
 }
